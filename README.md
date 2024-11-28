@@ -1,19 +1,23 @@
-# **authen-ai**
+# **authen_ai**
 
-AI-powered package to analyze images and videos and detect deepfakes.
+An AI-powered package to analyze images and videos and detect deepfakes effortlessly. `authen_ai` provides a streamlined way to integrate AI-based deepfake detection into your Node.js or frontend applications.
 
-[![npm version](https://img.shields.io/npm/v/authen-ai.svg?style=flat-square)](https://www.npmjs.org/package/authen-ai)
-[![Build status](https://img.shields.io/github/actions/workflow/status/your-repo/authen-ai/ci.yml?branch=main&label=CI&logo=github&style=flat-square)](https://github.com/Mohamed-Abdullah-Super/authen_ai_package.git)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/authen-ai?style=flat-square)](https://bundlephobia.com/package/authen-ai@latest)
-[![npm downloads](https://img.shields.io/npm/dm/authen-ai.svg?style=flat-square)](https://npm-stat.com/charts.html?package=authen-ai)
+[![npm version](https://img.shields.io/npm/v/authen_ai.svg?style=flat-square)](https://www.npmjs.com/package/authen_ai)  
+[![Build status](https://img.shields.io/github/actions/workflow/status/Mohamed-Abdullah-Super/authen_ai_package/ci.yml?branch=main&label=CI&logo=github&style=flat-square)](https://github.com/Mohamed-Abdullah-Super/authen_ai_package)  
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/authen_ai?style=flat-square)](https://bundlephobia.com/package/authen_ai@latest)  
+[![npm downloads](https://img.shields.io/npm/dm/authen_ai.svg?style=flat-square)](https://npm-stat.com/charts.html?package=authen_ai)  
+
+---
 
 ## **Features**
 
-- AI-based detection of manipulated or deepfake media.
-- Analyze images and videos for facial manipulation and authenticity.
-- Supports model-based and metadata analysis.
-- Configurable analysis thresholds and detection sensitivity.
-- Easy integration with any Node.js or frontend application.
+- **AI-Powered Detection**: Identify manipulated or deepfake media using advanced AI algorithms.
+- **Multi-Media Support**: Analyze both images and videos for facial manipulation and authenticity.
+- **Model-Based Insights**: Leverage metadata and model predictions for deeper analysis.
+- **Configurable Sensitivity**: Adjust detection thresholds to suit your application's needs.
+- **Seamless Integration**: Built for Node.js and modern JavaScript frameworks.
+
+---
 
 ## **Browser and Platform Support**
 
@@ -21,8 +25,12 @@ AI-powered package to analyze images and videos and detect deepfakes.
 | --- | --- | --- | --- |
 | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ |
 
-## **Installing**
+---
+
+## **Installation**
+
+You can install `authen_ai` using your preferred package manager:
 
 ### Using npm:
 ```bash
-$ npm install authen-ai
+npm install authen-ai
