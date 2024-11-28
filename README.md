@@ -3,7 +3,7 @@
 AI-powered package to analyze images and videos and detect deepfakes.
 
 [![npm version](https://img.shields.io/npm/v/authen-ai.svg?style=flat-square)](https://www.npmjs.org/package/authen-ai)
-[![Build status](https://img.shields.io/github/actions/workflow/status/your-repo/authen-ai/ci.yml?branch=main&label=CI&logo=github&style=flat-square)](https://github.com/your-repo/authen-ai/actions/workflows/ci.yml)
+[![Build status](https://img.shields.io/github/actions/workflow/status/your-repo/authen-ai/ci.yml?branch=main&label=CI&logo=github&style=flat-square)](https://github.com/Mohamed-Abdullah-Super/authen_ai_package.git)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/authen-ai?style=flat-square)](https://bundlephobia.com/package/authen-ai@latest)
 [![npm downloads](https://img.shields.io/npm/dm/authen-ai.svg?style=flat-square)](https://npm-stat.com/charts.html?package=authen-ai)
 
