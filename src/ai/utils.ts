@@ -1,4 +1,3 @@
-// scr/ai/utils.ts
 import fs from 'fs';
 
 /**

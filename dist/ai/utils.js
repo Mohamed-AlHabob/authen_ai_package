@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateToken = validateToken;
 exports.validateFilePath = validateFilePath;
-// scr/ai/utils.ts
 const fs_1 = __importDefault(require("fs"));
 /**
  * Validates the provided token.
