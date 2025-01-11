@@ -1,5 +1,6 @@
-import HttpClient from '../utils/httpClient';
-import { Video } from '../types';
+import { Video } from "../types";
+import HttpClient from "../utils/httpClient";
+
 
 class VideosAPI {
     private http: HttpClient;

@@ -3,5 +3,5 @@ tests/
 src/
 coverage/
 .env
-
+.idx
 tsconfig.json

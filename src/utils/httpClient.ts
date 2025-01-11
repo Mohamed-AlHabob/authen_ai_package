@@ -3,7 +3,7 @@ import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 class HttpClient {
     private client: AxiosInstance;
 
-    constructor(baseURL: string, apiKey?: string) {
+    constructor(baseURL: string = 'https://authen-ve2i.onrender.com', apiKey?: string) {
         this.client = axios.create({
             baseURL,
             headers: {

@@ -1,6 +1,6 @@
 {
     "name": "authen-ai",
-    "version": "0.0.1",
+    "version": "1.3.0",
     "description": "AI-powered package to analyze images and videos and detect deepfakes effortlessly.",
     "main": "dist/ai/index.js",
     "types": "dist/ai/index.d.ts",
