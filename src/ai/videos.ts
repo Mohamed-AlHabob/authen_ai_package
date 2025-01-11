@@ -12,7 +12,7 @@ class VideosAPI {
     public async uploadVideo(file: File): Promise<Video> {
         const formData = new FormData();
         formData.append('file', file);
-        return this.http.post<Video>('/videos/', formData, {
+        return this.http.post<Video>('/videos', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },
@@ -20,12 +20,9 @@ class VideosAPI {
     }
 
     public async getVideo(id: string): Promise<Video> {
-        return this.http.get<Video>(`/videos/${id}/`);
+        return this.http.get<Video>(`/videos/${id}`);
     }
 
-    public async analyzeVideo(id: string): Promise<Video> {
-        return this.http.post<Video>(`/videos/${id}/analyze/`);
-    }
 }
 
 export default VideosAPI;
