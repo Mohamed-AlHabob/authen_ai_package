@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
 class HttpClient {
-    constructor(baseURL = 'https://authen-ve2i.onrender.com', apiKey) {
+    constructor(baseURL = 'https://authen-ve2i.onrender.com/api', apiKey) {
         this.client = axios_1.default.create({
             baseURL,
             headers: {
