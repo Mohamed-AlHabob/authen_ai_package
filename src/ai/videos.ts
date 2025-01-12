@@ -30,19 +30,19 @@ class VideosAPI {
             signal,
         };
 
-        return this.http.post<Video>('/videos', formData);
+        return this.http.post<Video>('/videos/', formData);
     }
 
     public async getVideo(id: string): Promise<Video> {
-        return this.http.get<Video>(`/videos/${id}`);
+        return this.http.get<Video>(`/videos/${id}/`);
     }
 
     public async updateVideoFeedback(id: string, feedback: string): Promise<Video> {
-        return this.http.put<Video>(`/videos/${id}`, { user_feedback: feedback });
+        return this.http.put<Video>(`/videos/${id}/`, { user_feedback: feedback });
     }
 
     public async deleteVideo(id: string): Promise<void> {
-        return this.http.delete<void>(`/videos/${id}`);
+        return this.http.delete<void>(`/videos/${id}/`);
     }
 }
 

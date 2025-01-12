@@ -33,22 +33,22 @@ class VideosAPI {
                 },
                 signal,
             };
-            return this.http.post('/videos', formData);
+            return this.http.post('/videos/', formData);
         });
     }
     getVideo(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.http.get(`/videos/${id}`);
+            return this.http.get(`/videos/${id}/`);
         });
     }
     updateVideoFeedback(id, feedback) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.http.put(`/videos/${id}`, { user_feedback: feedback });
+            return this.http.put(`/videos/${id}/`, { user_feedback: feedback });
         });
     }
     deleteVideo(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.http.delete(`/videos/${id}`);
+            return this.http.delete(`/videos/${id}/`);
         });
     }
 }
