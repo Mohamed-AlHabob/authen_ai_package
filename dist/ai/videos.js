@@ -21,13 +21,19 @@ class VideosAPI {
         return __awaiter(this, void 0, void 0, function* () {
             const formData = new FormData();
             formData.append('file', file);
-            return this.http.post('/videos', formData, {
+            const config = {
                 headers: {
-                    // Let axios set the Content-Type header with boundary
                     'Content-Type': 'multipart/form-data',
                 },
+                onUploadProgress: (progressEvent) => {
+                    if (onProgress && progressEvent.lengthComputable) {
+                        const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+                        onProgress(percentCompleted);
+                    }
+                },
                 signal,
-            }, onProgress);
+            };
+            return this.http.post('/videos', formData);
         });
     }
     getVideo(id) {

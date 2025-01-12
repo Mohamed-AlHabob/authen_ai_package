@@ -17,18 +17,20 @@ class VideosAPI {
         const formData = new FormData();
         formData.append('file', file);
 
-        return this.http.post<Video>(
-            '/videos',
-            formData,
-            {
-                headers: {
-                    // Let axios set the Content-Type header with boundary
-                    'Content-Type': 'multipart/form-data',
-                },
-                signal,
+        const config = {
+            headers: {
+                'Content-Type': 'multipart/form-data',
             },
-            onProgress
-        );
+            onUploadProgress: (progressEvent: ProgressEvent) => {
+                if (onProgress && progressEvent.lengthComputable) {
+                    const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+                    onProgress(percentCompleted);
+                }
+            },
+            signal,
+        };
+
+        return this.http.post<Video>('/videos', formData);
     }
 
     public async getVideo(id: string): Promise<Video> {
@@ -45,4 +47,3 @@ class VideosAPI {
 }
 
 export default VideosAPI;
-
