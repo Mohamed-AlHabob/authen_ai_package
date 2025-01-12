@@ -16,3 +16,17 @@ export interface AnalysisModel {
     description: string;
     file: string;
 }
+
+export interface UploadProgressCallback {
+  (progress: number): void;
+}
+
+export interface ApiError extends Error {
+  response?: {
+    data?: {
+      message?: string;
+    };
+    status?: number;
+  };
+}
+

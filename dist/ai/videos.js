@@ -17,20 +17,32 @@ class VideosAPI {
     constructor(baseURL, apiKey) {
         this.http = new httpClient_1.default(baseURL, apiKey);
     }
-    uploadVideo(file) {
+    uploadVideo(file, onProgress, signal) {
         return __awaiter(this, void 0, void 0, function* () {
             const formData = new FormData();
             formData.append('file', file);
             return this.http.post('/videos', formData, {
                 headers: {
+                    // Let axios set the Content-Type header with boundary
                     'Content-Type': 'multipart/form-data',
                 },
-            });
+                signal,
+            }, onProgress);
         });
     }
     getVideo(id) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.http.get(`/videos/${id}`);
+        });
+    }
+    updateVideoFeedback(id, feedback) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.http.put(`/videos/${id}`, { user_feedback: feedback });
+        });
+    }
+    deleteVideo(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.http.delete(`/videos/${id}`);
         });
     }
 }

@@ -14,11 +14,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
 class HttpClient {
-    constructor(baseURL = 'https://authen-ve2i.onrender.com/api', apiKey) {
+    constructor(baseURL = 'https://authen-backend-22yr.onrender.com/api', apiKey) {
         this.client = axios_1.default.create({
             baseURL,
             headers: {
-                'Content-Type': 'application/json',
                 'Authorization': apiKey ? `Bearer ${apiKey}` : '',
             },
         });
@@ -29,9 +28,15 @@ class HttpClient {
             return response.data;
         });
     }
-    post(url, data, config) {
+    post(url, data, config, onUploadProgress) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.client.post(url, data, config);
+            const configWithProgress = Object.assign(Object.assign({}, config), { onUploadProgress: (progressEvent) => {
+                    if (progressEvent.total && onUploadProgress) {
+                        const progress = (progressEvent.loaded / progressEvent.total) * 100;
+                        onUploadProgress(progress);
+                    }
+                } });
+            const response = yield this.client.post(url, data, configWithProgress);
             return response.data;
         });
     }

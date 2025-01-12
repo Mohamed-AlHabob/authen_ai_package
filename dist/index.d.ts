@@ -1,4 +1,4 @@
-import VideosAPI from './ai/videos';
-import ModelsAPI from './ai/models';
-import HttpClient from './utils/httpClient';
-export { VideosAPI, ModelsAPI, HttpClient };
+export { default as VideosAPI } from './ai/videos';
+export { default as ModelsAPI } from './ai/models';
+export { default as HttpClient } from './utils/httpClient';
+export * from './types';
