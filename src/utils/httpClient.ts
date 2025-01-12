@@ -24,14 +24,14 @@ class HttpClient {
         config?: AxiosRequestConfig,
         onUploadProgress?: UploadProgressCallback
     ): Promise<T> {
-        const configWithProgress = {
+        const configWithProgress: AxiosRequestConfig = {
             ...config,
             onUploadProgress: (progressEvent: AxiosProgressEvent) => {
                 if (progressEvent.total && onUploadProgress) {
                     const progress = (progressEvent.loaded / progressEvent.total) * 100;
                     onUploadProgress(progress);
                 }
-            }
+            },
         };
 
         const response: AxiosResponse<T> = await this.client.post(url, data, configWithProgress);
@@ -50,4 +50,3 @@ class HttpClient {
 }
 
 export default HttpClient;
-

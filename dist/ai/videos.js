@@ -25,15 +25,9 @@ class VideosAPI {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
-                onUploadProgress: (progressEvent) => {
-                    if (onProgress && progressEvent.lengthComputable) {
-                        const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
-                        onProgress(percentCompleted);
-                    }
-                },
-                signal,
+                signal, // Pass the AbortSignal
             };
-            return this.http.post('/videos/', formData);
+            return this.http.post('/videos/', formData, config, onProgress);
         });
     }
     getVideo(id) {

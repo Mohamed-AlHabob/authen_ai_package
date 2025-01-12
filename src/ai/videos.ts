@@ -1,6 +1,7 @@
 import { Video } from "../types";
 import HttpClient from "../utils/httpClient";
 import { UploadProgressCallback } from "../types";
+import { AxiosRequestConfig } from "axios";
 
 class VideosAPI {
     private http: HttpClient;
@@ -17,20 +18,14 @@ class VideosAPI {
         const formData = new FormData();
         formData.append('file', file);
 
-        const config = {
+        const config: AxiosRequestConfig = {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },
-            onUploadProgress: (progressEvent: ProgressEvent) => {
-                if (onProgress && progressEvent.lengthComputable) {
-                    const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
-                    onProgress(percentCompleted);
-                }
-            },
-            signal,
+            signal, // Pass the AbortSignal
         };
 
-        return this.http.post<Video>('/videos/', formData);
+        return this.http.post<Video>('/videos/', formData, config, onProgress);
     }
 
     public async getVideo(id: string): Promise<Video> {
